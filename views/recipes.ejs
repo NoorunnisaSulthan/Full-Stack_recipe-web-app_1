@@ -1,0 +1,39 @@
+
+<%- include("partials/header.ejs") %>
+<div class="fullwidth"></div>
+<div class="background">
+<%if(locals.RecipesList){%>
+    <h1 class="headingRecipeType"><%=foodtype%> Recipes</h1>
+    <div class="Cardcontainer"></div>
+    <%for(var i=0; i<RecipesList.length ; i++){%>
+       <%nextRowIndicator.forEach((multipleOF3)=>{%>
+        <%if(i==multipleOF3){%> 
+        <div class="Cardcontainer">
+          <%}%>
+        <div class="card">
+            <div class="circle">
+              <img src="/<%=RecipesList[i].finalDishImage%>">
+            </div>
+            <div class="content">
+              <h6 class="recipename"><%=RecipesList[i].title%></h6>
+              <p class="center-div-restrict"> <%=RecipesList[i].description%></p>
+               
+              <a  href="/recipes/<%=mealType%>/<%=RecipesList[i]._id%>" >READ MORE</a>
+            </div>
+          </div>
+         
+            <%})%>
+        
+
+    <%}%>
+    <%}%>
+    <div class="authorDetails1 col-lg-11 col-sm-12">
+      <div class="det">
+        <%- include("partials/newsletter.ejs") %>
+    </div>
+  </div>
+</div>
+</div>
+
+<%- include("partials/footer.ejs") %>
+</div>

@@ -1,0 +1,144 @@
+<%- include("partials/header.ejs") %>
+<div class="container" style="min-height: 360px">
+  <div class="center">
+    <div class="center-div">
+      <h1>--- Upload your Recipe ---</h1>
+      <form action="/compose" enctype="multipart/form-data"  method="post">
+        <div class="mb-3">
+          <label for="formGroupExampleInput" class="form-label"
+            >Food Type
+            <i
+              ><span>&#40;</span>Breakfast/Lunch/Dinner<span>&#41;</span></i
+            ></label
+          >
+          <input
+            type="text"
+            class="titleField"
+            id="formGroupExampleInput"
+            placeholder=""
+            name="ftype"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="formGroupExampleInput" class="form-label"
+            >Recipe Name</label
+          >
+          <input
+            type="text"
+            class="headingField"
+            id="formGroupExampleInput"
+            placeholder=""
+            name="ftitle"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="formGroupExampleInput2" class="form-label"
+            >Description
+            <i><span>&#40;</span>max. 40 words<span>&#41;</span></i>
+          </label>
+          <input
+            type="text"
+            class="desField"
+            id="formGroupExampleInput2"
+            placeholder=""
+            name="fdes"
+          />
+        </div>
+        <div class="mb-3">
+          <label >Note: Make the final recipe image as the third image you upload</label>
+          <label for="finalRecipeimage">Final Recipe Image</label>
+          <input type="file" name="finalRecipeimage">
+    
+      </div>
+
+        <div class="mb-3">
+          <label for="formGroupExampleInput2" class="form-label">Heading</label>
+          <input
+            type="text"
+            class="headingField"
+            id="formGroupExampleInput2"
+            placeholder=""
+            name="fheading"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="formGroupExampleInput2" class="form-label"
+            >Recipe Blog</label
+          >
+          <input
+            type="text"
+            class="contentField"
+            id="formGroupExampleInput2"
+            placeholder=""
+            name="fcontent"
+          />
+        </div>
+        <label>Ingredients</label>
+        <div id="ingredients">
+            <input type="text" name="ingredients[]" required>
+        </div>
+        <button type="button" id="addIngredButton">Add Ingredient</button>
+
+        <div class="mb-3">
+          <label >Note: Make the final recipe image as the third image you upload</label>
+          <label for="image">Ingredients Image</label>
+          <input type="file" name="ingredientsImage" >
+    
+      </div>
+    
+      <label>Steps</label>
+      <div id="steps">
+          <input type="text" name="steps[]" required>
+      </div>
+      <button type="button" id="addStepsButton">Add Steps</button>
+    </div>
+      
+      <div class="mb-3">
+        <label >Note: Make the final recipe image as the third image you upload</label>
+        <label for="image">Steps Image</label>
+        <input type="file" name="stepsimages" multiple>
+    
+    </div>
+    </div>
+          
+
+  
+       
+      
+        
+        <button type="submit" class="submitButton">Publish</button>
+      </form>
+
+    
+      <!-- <form action="/sectionAdd" method="post">
+         
+
+           TODO : ADD value field in ejs to add the title value and use lodash to retrive the value  
+          <input type="hidden" name="action" >
+          <button type="submit" class="btn btn-dark">Add new section</button>
+        </form> -->
+    </div>
+  </div>
+</div>
+
+<script>
+  document.getElementById('addIngredButton').addEventListener('click', () => {
+      const ingredientsDiv = document.getElementById('ingredients');
+      const newIngredientInput = document.createElement('input');
+      newIngredientInput.type = 'text';
+      newIngredientInput.name = 'ingredients[]';
+      newIngredientInput.required = true;
+      ingredientsDiv.appendChild(newIngredientInput);
+  });
+
+  document.getElementById('addStepsButton').addEventListener('click', () => {
+  const stepsContainer = document.getElementById('steps');
+  const newStepsInput = document.createElement('input');
+  newStepsInput.type = 'text';
+  newStepsInput.name = 'steps[]';
+  newStepsInput.required = true;
+  stepsContainer.appendChild(newStepsInput);
+});
+</script>
+
+<%- include("partials/footer.ejs") %>

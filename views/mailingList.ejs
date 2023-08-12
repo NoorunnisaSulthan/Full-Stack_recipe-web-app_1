@@ -1,0 +1,17 @@
+<div class="fullwidth">
+<%- include("partials/header.ejs") %>
+
+<div class="  table">
+    <h1>--Lets Mail it--</h1>
+    <%for(let i=0;i<user.length;i++){%>
+
+    <div class="row">
+        <div class="col-1"><%=i+1%></div>
+        <div class="col-10"><%=user[i].email%></div>
+
+    </div>
+   <% }%>
+</div>
+
+<%- include("partials/footer.ejs") %>
+</div>

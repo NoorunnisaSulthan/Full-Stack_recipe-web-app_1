@@ -1,0 +1,30 @@
+<%- include("partials/header.ejs") %>
+
+<%if(locals.recipes){%>
+
+<div class="deletecard">
+    <h1 class="recipeN" > --Delete <%=mealType%> Recipes--</h1>
+    <% recipes.forEach(recipe => { %>
+    <div class="indiCard">
+    <form action="/delete" method="post" class="column">
+  
+    <input type="hidden" name="recipeId" value="<%= recipe._id %>">
+    <input type="hidden" name="mealType" value="<%= mealType %>">
+    <!-- using bootstap col to align the icon and text -->
+  <div class="col-10">
+    <h5><%=recipe.title%></h5>
+</div>
+<div class="col-1">
+   <button type="submit" class="deleteBtn" name="deleteRecipe"><i class="fa-solid fa-trash" style="color: #404245;"></i></button></div>
+   
+</form>
+    
+    
+</div>
+    <% }); %>
+
+</div>
+
+<%}%>
+
+<%- include("partials/footer.ejs") %>

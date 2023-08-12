@@ -1,0 +1,516 @@
+body {
+
+    height: 100%;
+    margin: 0;
+    padding: 0;
+
+  }
+  header{
+
+    background-image: linear-gradient(to right, rgb(39, 36, 36) , #333);;
+  }
+  .aheaderBackground{
+   width: 25%;
+   height: 100px;
+    
+    
+  }
+  .headerBackground{
+height: 500px;
+width: 500px;
+     
+     
+   }
+.col-mm-12 , .col-lg-12{
+    overflow: hidden;
+    background-color: #333;
+    margin-left: 1%;
+    margin-right: 5%;
+
+  }
+  
+  .navbar a, .navbar li {
+    float: left;
+    font-size: 16px;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    margin-right: 30px;
+    text-decoration: none;
+  }
+  
+  .dropdown {
+    float: left;
+    overflow: hidden;
+  }
+  
+  .dropdown  {
+    font-size: 22px;
+    padding: 7px;
+    border: none;
+    outline: none;
+    color: white;
+
+    background-color: inherit;
+    
+    margin: 0;
+  }
+  
+  /* nav a:hover, .dropdown:hover .dropbtn {
+    background-color: rgb(237, 204, 154);
+  } */
+
+
+  .dropdown-content a:hover, .dropdown-content li:hover{
+    background-color: #ddd;
+  
+  }
+
+
+
+  .col-mm-12 a:hover, .col-mm-12 li:hover{
+    color: rgb(248, 221, 221);
+  }
+.start{
+    
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    font-size: 52px;
+    padding: 7px;
+    position: relative;
+    list-style-type: none 
+}
+
+  .start:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: #fff;
+    transform: scaleX(0);
+    transition: all 1s;
+    transform-origin: left;
+  }
+ .start:hover:before,
+ .start:hover:after
+  {
+  transform: scaleX(1);
+} 
+
+.start:after{
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: #ffffff;
+  transform: scaleX(0);
+  transition: all 1s;
+  transform-origin: right;
+}
+
+/* home page style */
+main{
+  background-color: rgb(253, 231, 202);
+  width: 100%;
+  
+}
+
+
+.row{
+  margin-top: 20px;
+  
+}
+
+.styleText{
+  color: black;
+}
+
+/* .col{
+  display: flex;
+ 
+  justify-content: space-between;
+} */
+.image {
+   /*pic h1 is under .image so here h1 will be placed relative to parent */
+  position: relative; 
+  overflow: hidden;
+}
+
+img{
+
+  width: 100%;
+  object-fit: cover;
+  width: 100%;
+  height: auto;
+  display: block;
+  
+}
+.pic {
+  width: 300px;
+  height: 400px;
+ 
+  margin: 5px;
+  display: flex;
+  flex: 10px;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+.pic img {
+  max-width: 100%;
+  max-height: 400px;
+}
+.pic h3 {
+  position: absolute;
+  top: 50%; /* Position the heading vertically in the middle */
+  left: 50%; /* Position the heading horizontally in the middle */
+  transform: translate(-50%, -50%); /* Adjust for centering */
+  background-color: rgba(255, 246, 143, 0.8); /* Add background color */
+  padding: 10px; /* Add padding to the heading */
+  width: 100%; /* Make sure the heading takes full width */
+  text-align: center; /* Center align the text */
+}
+footer {
+    margin: 0;
+    bottom: 0;
+    top: 0;
+    background-color: rgb(57, 61, 61);
+    left: 0;
+    height: 50px;
+    transform: translateY(18px);
+    color: rgb(255, 241, 223);
+    text-align: center;
+    
+
+  }
+
+
+.desField{
+    height: 100px;
+    width: 50%;
+}
+.headingField{
+
+    width: 50%;
+}
+.contentField{
+    height: 500px;
+    width: 50%;
+}
+.oheaderBackground{
+  height: 150px;
+  width:70%;
+}
+
+
+/* recipe.ejs styles */
+
+.background{
+  overflow: hidden;
+  background-color: rgb(253, 231, 202);
+  
+}
+
+.headingRecipeType, .recipeN{
+  font-family: 'Allura', cursive;
+  font-size: 60px;
+  align-items: center;
+  text-align: center;
+  transform: translateY(20px)
+  
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+ 
+
+ 
+
+ 
+.Cardcontainer{
+  position: relative;
+  width:100%;
+  padding: 15px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  background-color: rgb(253, 231, 202);
+}
+img{
+    width: 100%;
+    height: 50%;
+     
+}
+
+ 
+.Cardcontainer .card{
+  position: relative;
+  width: 250px;
+  height: 420px;
+  border-radius: 10px;
+  box-shadow: 0px 15px 25px rgba(0,0,0,.2);
+  background-color: #fff;
+  margin: 20px;
+  overflow: hidden;
+  transition: .7s;
+  
+}
+ 
+.Cardcontainer:hover .card{
+
+  transform: scale(1);
+
+} 
+ 
+.Cardcontainer .card:hover{
+
+  transform: scale(1.05);
+ 
+} 
+ 
+.Cardcontainer .card .circle{
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-color: #474444;
+  clip-path: circle(200px at center 0);
+  text-align: center;
+ 
+}
+ 
+ 
+.Cardcontainer .card .content{
+  position: absolute;
+  bottom: 10px;
+  page-break-after: 20px;
+  text-align: center;
+  padding: 20px;
+}
+ 
+.Cardcontainer .card .content p{
+  color: #666;
+  text-align: justify;
+  font-size: 15px;
+}
+ 
+.Cardcontainer .card .content a{
+  position: relative;
+  display: inline-block;
+  background-color: #3c3b3b;
+  color: #fff;
+  padding: 6px 10px;
+  border-radius: 40px;
+  margin-top: 20px;
+  text-decoration: none;
+   font-size: 12px;
+   transform: translateY(20px);
+}
+
+.center-div-restrict{
+  transform: translateY(50px);
+width: 200px;
+
+overflow: hidden;
+display: -webkit-box;
+-webkit-box-orient: vertical;
+-webkit-line-clamp: 4;
+
+}
+
+.recipename{
+  transform: translateY(35px);
+}
+
+
+/* compose.ejs styles */
+
+.center-div h1{
+  margin-top: 20px;
+  margin-bottom: 20px;
+  text-align: center;
+  align-items: center;
+
+}
+
+.center-div input{
+  display: inline-block;
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+  border-radius: 4px;
+  border: .5px solid;
+  margin: 10px 0;
+}
+.addIngredButton{
+  height: 40px;
+  width: 100px;
+  font-size: 12px;
+}
+
+
+/* recipe page styles */
+.recipePageStyle{
+  font-family: 'Bricolage Grotesque', sans-serif;
+  margin: 50px;
+}
+
+.jumpRecipeBtn{
+  color: wheat;
+  background-color: #4a4848;
+  border-radius: 5px;
+  margin-bottom: 30px;
+}
+
+.imagefood{
+  margin-top: 30px;
+  margin-bottom: 30px;
+  height: 600px;
+ 
+}
+#sideColumn{
+  margin-bottom: 0;
+  background-color: #333;
+  top: 0;
+  bottom: 0;
+  align-items: center;
+}
+#sideColumn .authorDetails{
+  border: 2px solid wheat;
+  margin: 10px;
+  margin-bottom: 30px;
+}
+
+#sideColumn .authorDetails .authorDetail{
+  border: 1px solid wheat;
+
+  margin: 10px 10px;
+  text-align: center;
+  font-family: 'Bricolage Grotesque', sans-serif;
+
+  
+}
+
+#sideColumn .authorDetails .authorDetail h5{
+  margin-top: 10px;
+  color: rgb(252, 191, 191);
+}
+
+#sideColumn .authorDetails .authorDetail p{
+color: wheat;
+font-size: 10px;
+}
+
+
+
+/* delete items .ejs styles */
+
+.deletecard{
+  
+  margin: 70px;
+  border-color: #333;
+ 
+ 
+  
+}
+.indiCard{
+  display: flex;
+  margin-top: 40px;
+  border: 5px solid black;
+  padding: 20px 20px;
+}
+
+.column{
+  display: flex;
+  width: 1800px;
+}
+
+/* newsletter styles */
+
+.recipeBtn{
+  background-color: #333;
+  color: rgb(249, 233, 200);
+  margin-top: 20px;
+  align-items: center;
+}
+.newsletterPageStyles{
+  color: rgb(43, 42, 41);
+  background-color: rgb(242, 217, 169,0.7);
+  padding: 20px;
+  margin-top: 20px;
+  
+}
+
+
+.newsletterPageStyles h4{
+
+  margin-bottom: 20px;
+}
+
+ .authorDetails1{
+  border: 2px solid wheat;
+  background-color:rgb(226, 204, 164) ;
+  margin-left: 10px;
+  margin-right: 10px;
+  transition: .7s;
+
+}
+
+ .authorDetails1:hover{
+  border: 2px solid rgb(69, 67, 64);
+  background-color:rgb(57, 55, 52) ;
+  margin-left: 10px;
+  margin-right: 10px;
+
+  transform: scale(1.05);
+
+
+}
+
+/* subscriberThanks page styles  */
+
+.thanksPage{
+  margin: 50px;
+  text-align: center;
+}
+
+.thanksPage h1{
+  font-family: 'Allura', cursive;
+  font-size: 100px;
+}
+
+#about{
+  transform: translateX(-200px);
+}
+
+/* mailing list styles  */
+
+.table{
+margin: 70px;
+
+}
+.table h1{
+  text-align: center;
+  font-family: 'Allura', cursive;
+}
+
+.table .row .col-1, .table .row .col-10{
+  border: 2px solid black;
+
+}
+.fullwidth{
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+
+}
+
+.page{
+  height: 200px;
+}

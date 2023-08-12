@@ -1,0 +1,30 @@
+<%- include("partials/header.ejs") %>
+
+<%if(locals.recipes){%>
+
+<div class="deletecard">
+    <h1 class="recipeN" > --Update <%=mealType%> Recipes--</h1>
+    <% recipes.forEach(recipe => { %>
+    <div class="indiCard">
+    <form action="/edit" method="post" class="column">
+  
+    
+    <!-- using bootstap col to align the icon and text -->
+  <div class="col-10">
+    <h5><%=recipe.title%></h5>
+</div>
+<div class="col-1">
+    <input type="hidden" name="id" value="<%= recipe._id %>">
+    <input type="hidden" name="mealType" value="<%= mealType %>">
+    <button type="submit" class="updateBtn" name="editRecipe"><i class="fa-solid fa-pen-to-square" style="color: #3a3c41;"></i></button></div>
+</form>
+    
+    
+</div>
+    <% }); %>
+
+</div>
+
+<%}%>
+
+<%- include("partials/footer.ejs") %>

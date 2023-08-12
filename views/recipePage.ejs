@@ -1,0 +1,58 @@
+<%- include("partials/header.ejs") %>
+<div class="row">
+<div class="col-lg-9 col-sm-12">
+<%if(locals.recipe){%>
+    <h1 class="headingRecipeType"><%=recipe.foodType%> Recipes</h1>
+    <div class="recipePageStyle">
+    <h1><%=recipe.title%></h1>
+    <button class="jumpRecipeBtn"><i class="fa-solid fa-arrow-down" style="color: #f8e7d3;"></i> Jump to recipe</button>
+    <h4><%=recipe.description%></h4>
+    <img  src="/<%=recipe.finalDishImage%>" alt="" class="imagefood col-12">
+<h3><%=recipe.heading%></h3>
+<p><%=recipe.content%></p>
+    <h3>Ingredients</h3>
+    <ul>
+    <% recipe.ingredients.forEach(ingredient => { %>
+        <li><%= ingredient %></li>
+      <% }); %>
+    </ul>
+   
+   <img src="/<%=recipe.ingredImage%>" alt=""class="imagefood col-12">
+   <h3>Preparation Steps</h3>
+   <ul>
+    
+      <% for(let j=0;j<recipe.steps.length;j++){%>
+        <li><%= recipe.steps[j] %></li>
+        <%if(j<recipe.stepsImage.length){%>
+        <img src="/<%=recipe.stepsImage[j]%>" alt="" class="imagefood col-12">
+        <% }%>
+      <% }; %>
+    </ul>
+  
+<%}%>
+</div>
+</div>
+<div class="col-lg-3 col-sm-12" id="sideColumn">
+  <div class="authorDetails col-lg-11 col-sm-12">
+    <div class="authorDetail col-lg-11 col-sm-12">
+      <div class="iz col-sm-12">
+       <img src="/images/authorImage.jpg" alt="" class="col-sm-12 ">
+      </div>
+       <h5>Hi I'm Noorunnisa</h5>
+       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, . </p>
+    </div>
+  </div>
+  <div class="authorDetails1 col-lg-11 col-sm-12">
+    <div class="det">
+      <form action="/mailSignups" class="newsletterPageStyles" method="post">
+        <h4>Wanna quickly get my latest recipes?</h4>
+        <label>Email</label>
+        <input type="email" name="userEmail">
+        <button type="submit" class="recipeBtn"> Get Recipes!</button>
+    </form>
+  </div>
+  </div>
+</div>
+
+</div>
+<%- include("partials/footer.ejs") %>
