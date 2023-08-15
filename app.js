@@ -27,10 +27,10 @@ console.log(filen);
 
 // Use upload.array() to handle multiple images
 const upload = multer({ storage:storage });
-
+const port = process.env.PORT || 3000; 
 require('dotenv').config();
 const dbPassword = process.env.atlas_pwd;
-app.listen(3000, () => {
+app.listen(port, () => {
   console.log("server started at 3000");
 });
 let mongoose = require("mongoose");
