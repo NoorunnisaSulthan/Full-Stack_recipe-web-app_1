@@ -5,9 +5,13 @@ body {
     padding: 0;
 
   }
+  .container{
+    height: 1000px;
+  }
   header{
 
     background-image: linear-gradient(to right, rgb(39, 36, 36) , #333);;
+    margin-bottom: 50px;
   }
   .aheaderBackground{
    width: 25%;

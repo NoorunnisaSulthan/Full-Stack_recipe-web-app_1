@@ -13,8 +13,10 @@
     "body-parser": "^1.20.2",
     "bootstrap": "^5.3.1",
     "bootstrap-icons": "^1.10.5",
+    "dotenv": "^16.3.1",
     "ejs": "^3.1.9",
     "express": "^4.18.2",
+    "mongodb": "^5.7.0",
     "mongoose": "^7.4.2",
     "multer": "^1.4.5-lts.1"
   }

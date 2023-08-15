@@ -28,15 +28,15 @@ console.log(filen);
 // Use upload.array() to handle multiple images
 const upload = multer({ storage:storage });
 
-
-
+require('dotenv').config();
+const dbPassword = process.env.atlas_pwd;
 app.listen(3000, () => {
   console.log("server started at 3000");
 });
 let mongoose = require("mongoose");
 const { table, log } = require("console");
 const server = "127.0.0.1:27017";
-const database = "RecipeWebsite";
+const database = "RecipeWebsiteDatabase";
 class Database {
   constructor() {
     this._connect();
@@ -44,7 +44,7 @@ class Database {
 
   _connect() {
     mongoose
-      .connect(`mongodb://${server}/${database}`)
+    .connect(`mongodb+srv://noorunnisa_admin:${dbPassword}@cluster0.mvsarej.mongodb.net/${database}?retryWrites=true&w=majority`)
       .then(() => {
         console.log("Database connection successful");
       })
