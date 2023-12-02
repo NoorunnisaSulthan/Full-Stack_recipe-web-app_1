@@ -12,7 +12,7 @@ const bodyParser = require("body-parser");
 app.use(bodyParser.urlencoded({ extended: true }));
 var filen=[]
 //for file upload
-//enable edit to aslo have predef images
+//enable edit to also have predef images
 const multer = require('multer');
 const storage = multer.diskStorage({
   destination:'./uploadedImg',
@@ -27,21 +27,29 @@ console.log(filen);
 
 // Use upload.array() to handle multiple images
 const upload = multer({ storage:storage });
+//to allow render port to access app.js
 const port = process.env.PORT || 3000; 
+
+//to read .env file where password stored
 require('dotenv').config();
 const dbPassword = process.env.atlas_pwd;
+
 app.listen(port, () => {
   console.log("server started at 3000");
 });
+
+//give mongodb to project
 let mongoose = require("mongoose");
-const { table, log } = require("console");
-const server = "127.0.0.1:27017";
+//to access server locally
+// const { table, log } = require("console");
+// const server = "127.0.0.1:27017";
+
 const database = "RecipeWebsiteDatabase";
 class Database {
   constructor() {
     this._connect();
   }
-
+ //connecting mongodb to render 
   _connect() {
     mongoose
     .connect(`mongodb+srv://noorunnisa_admin:${dbPassword}@cluster0.mvsarej.mongodb.net/${database}?retryWrites=true&w=majority`)
@@ -75,6 +83,7 @@ const recipeSchema = new Schema({
 const newsletterSchema=new Schema({
   email:String
 })
+
 //created a table/collection
 const Breakfast = mongoose.model("Breakfast", recipeSchema);
 const Lunch = mongoose.model("Lunch", recipeSchema);
@@ -84,7 +93,8 @@ const newsletterMail=mongoose.model("newsletterMail",newsletterSchema)
 const breakfastRecipes = [];
 const lunchRecipes = [];
 const dinnerRecipes = [];
-const emails=[]
+
+//logic to enable new line after three cards
 //getting all multiples of 3
 const multiplesOf3 = [];
 for (let i = 0; i < 100; i++) {
@@ -92,17 +102,15 @@ for (let i = 0; i < 100; i++) {
     multiplesOf3.push(i);
   }
 }
-
-
-
+//first page displayed
 app.get("/", (req, res) => {
   res.render("home");
 });
 
+//hidden page
 app.get("/compose", (req, res) => {
   res.render("compose");
 });
-
 
 
 app.get("/recipes/:mealType", (req, res) => {
@@ -112,7 +120,7 @@ app.get("/recipes/:mealType", (req, res) => {
   
   if (mealType == "breakfast") {
     Breakfast.find().then(function (brecipefound) {
-      console.log(brecipefound);
+  
       console.log(brecipefound.length);
       if (brecipefound.length == 0) {
         Breakfast.insertMany(breakfastRecipes);
@@ -245,7 +253,7 @@ app.get("/recipes/:mealType/:recipeId",(req,res)=>{
     tablename.findOne({_id:id})
     .then((foundRecipe)=>{ //will only return true or false
       if(foundRecipe){
-        console.log("xero");
+       
 
       res.render("recipePage",{recipe:foundRecipe})
       }
@@ -271,7 +279,7 @@ if(mealType==element){
   const tables=[Breakfast,Lunch,Dinner]
  
 
-   console.log(i);
+  
     tables[i].find()
       .then(function(recipeFound){
         if(recipeFound){
@@ -452,7 +460,7 @@ console.log(site);
     console.log("Updated recipe");
     res.redirect(`/recipes/${site}`)
     res.on("finish", () => {
-      const alertMessage = "Recipe deleted successfully!";
+      const alertMessage = "Recipe updated successfully!";
       const alertScript = `<script>alert('${alertMessage}');</script>`;
       res.write(alertScript);
       res.end();
@@ -466,10 +474,7 @@ console.log(site);
  
   res.redirect(`recipes/${site}`);
 
-  // //creates record/documents
-  // const newRecipe = new TodoToday({
-  //   task: "Learn mongoose",
-  // });
+  
 });
 
 app.post("/mailSignups",(req,res)=>{
